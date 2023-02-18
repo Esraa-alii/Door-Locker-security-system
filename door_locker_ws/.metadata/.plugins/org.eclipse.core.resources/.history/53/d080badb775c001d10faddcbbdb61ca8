@@ -1,0 +1,116 @@
+/***********************************************************************************************************
+ * Module :Application
+ *
+ * File Name :app1.h
+ *
+ * Description :Header file for the application
+ *
+ *      Author:
+ **********************************************************************************************************/
+
+#ifndef HMI_SYSTEM_H_
+#define HMI_SYSTEM_H_
+
+#include"std_types.h"
+#include"timer.h"
+#include"keypad.h"
+#include"lcd.h"
+#include"uart.h"
+#include<util/delay.h>
+#include<avr/io.h>
+#include<avr/interrupt.h>
+
+/***********************************************************************************************************
+ *                                         Definitions                                                    *
+ **********************************************************************************************************/
+#define NUMBER_OF_OVERFLOWS_PER_SECOND 32
+#define M1_READY 0x20
+#define M2_READY 0x10
+
+
+typedef enum{
+	wrongPass,correctPass
+};
+
+typedef enum{
+	enterPass,sendByUART,displayMenu,doorState,changePass,wrongPassword
+};
+/***********************************************************************************************************
+ *                                        Extern Variables                                                 *
+ **********************************************************************************************************/
+/*Global variable for edge count function for contain ticks counter of timer */
+extern uint16 volatile g_timer_tick ;
+/*Global variable to know where the code will be */
+extern uint8 volatile g_order;
+/*Global variable to take the pass from the keypad */
+extern uint8 pass[5];
+extern uint8 confirmPass[5];
+extern uint8 do_case;
+/*Global variable used in function of options */
+extern uint8 volatile selected_option;
+/*Global variable for check the passwords to open the door  */
+extern uint8 volatile checker;
+extern uint8 volatile checking_value;
+/***********************************************************************************************************
+ *                                       Function Prototypes                                               *
+ **********************************************************************************************************/
+
+/*
+ * Description :
+ * call back function of timer to count the seconds that we need
+ */
+void timer_decrement_counter(void);
+void timer(uint8 volatile g_seconds_required);
+/*
+ * Description:
+ * Function that take the password twice from the keypad and display on LCD as *
+ */
+void Enter_Password(void);
+/*
+ * Description :
+ * Function to compare if the two passwords are matching or not
+ */
+void check_matchedPass();
+/*
+ * Description:
+ * Function to send the password to the MCU2 by uart
+ */
+void send_Pass_ToMcu2(void) ;
+
+/*
+ * Description:
+ * Function to decide open the door or change the password
+ * option list from *.open
+ * -. change password
+ */
+void options_menu(void);
+/*
+ * Description :
+ * Function that take the password once from the keypad and store at array
+ */
+void enter_saved_pass(void);
+/*
+ * Description :
+ * Function that receive if the pass was correct or not and if correct open the door
+ */
+void check_Pass(uint8 check_password);
+/*
+ * Description:
+ * Function that display the main list of the system
+ */
+void display_optionsMenu(void);
+/*
+ * DEscription :
+ * Function that display on the lcd when the door is opening and closing
+ */
+void matched_State(void);
+/*
+ * Description :
+ * Function that when we enter the password 3 times wrong display message on the lcd
+ * for the 60 seconds
+ * then return to main list
+ */
+void wrong_Passwords(void);
+
+#endif /* APP_H_ */
+

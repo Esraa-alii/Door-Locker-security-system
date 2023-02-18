@@ -1,0 +1,1403 @@
+14:47:58 **** Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../Control_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_main.d" -MT"Control_ECU_main.o" -c -o "Control_ECU_main.o" "../Control_ECU_main.c"
+In file included from ../Control_system.h:64,
+                 from ../Control_ECU_main.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Control_ECU_main.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../Control_ECU_main.c
+ 
+Building file: ../buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"buzzer.d" -MT"buzzer.o" -c -o "buzzer.o" "../buzzer.c"
+Finished building: ../buzzer.c
+ 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+Finished building: ../dc_motor.c
+ 
+Building file: ../external_eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"external_eeprom.d" -MT"external_eeprom.o" -c -o "external_eeprom.o" "../external_eeprom.c"
+Finished building: ../external_eeprom.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../pwm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"pwm.d" -MT"pwm.o" -c -o "pwm.o" "../pwm.c"
+Finished building: ../pwm.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+Finished building: ../timer.c
+ 
+Building file: ../twi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"twi.d" -MT"twi.o" -c -o "twi.o" "../twi.c"
+Finished building: ../twi.c
+ 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"uart.d" -MT"uart.o" -c -o "uart.o" "../uart.c"
+Finished building: ../uart.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:48:05 **** Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_ECU_main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:10:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+Finished building: ../keypad.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:209: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+Finished building: ../timer.c
+ 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"uart.d" -MT"uart.o" -c -o "uart.o" "../uart.c"
+Finished building: ../uart.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:52:53 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:52:56 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:57:28 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9444 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:57:32 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:01:54 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../Control_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_main.d" -MT"Control_ECU_main.o" -c -o "Control_ECU_main.o" "../Control_ECU_main.c"
+In file included from ../Control_system.h:64,
+                 from ../Control_ECU_main.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Control_ECU_main.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../Control_ECU_main.c
+ 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:01:58 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_ECU_main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:10:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:06:13 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../Control_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_main.d" -MT"Control_ECU_main.o" -c -o "Control_ECU_main.o" "../Control_ECU_main.c"
+In file included from ../Control_system.h:64,
+                 from ../Control_ECU_main.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Control_ECU_main.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../Control_ECU_main.c
+ 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:06:17 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_ECU_main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:10:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:10:59 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../Control_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_main.d" -MT"Control_ECU_main.o" -c -o "Control_ECU_main.o" "../Control_ECU_main.c"
+In file included from ../Control_system.h:64,
+                 from ../Control_ECU_main.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Control_ECU_main.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../Control_ECU_main.c
+ 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:11:03 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_ECU_main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:10:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:14:50 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   10122 bytes (61.8% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:15:07 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15408 bytes (94.0% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:19:03 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15408 bytes (94.0% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:21:57 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../Control_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_main.d" -MT"Control_ECU_main.o" -c -o "Control_ECU_main.o" "../Control_ECU_main.c"
+In file included from ../Control_system.h:64,
+                 from ../Control_ECU_main.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Control_ECU_main.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../Control_ECU_main.c
+ 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:22:00 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_ECU_main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:10:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:26:03 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../Control_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_main.d" -MT"Control_ECU_main.o" -c -o "Control_ECU_main.o" "../Control_ECU_main.c"
+In file included from ../Control_system.h:64,
+                 from ../Control_ECU_main.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Control_ECU_main.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../Control_ECU_main.c
+ 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:64,
+                 from ../control_system.c:1:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:1:
+../Control_system.h:87: warning: useless storage class specifier in empty declaration
+../Control_system.h:91: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:26:08 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_ECU_main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:10:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:19,
+                 from ../HMI_system.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:11:
+../HMI_system.h:33: warning: useless storage class specifier in empty declaration
+../HMI_system.h:37: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:47:58 **** Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+AllocationBase 0x0, BaseAddress 0x71540000, RegionSize 0x370000, State 0x10000
+C:\WinAVR-20100110\utils\bin\sh.exe: *** Couldn't reserve space for cygwin's heap, Win32 error 0
+make: *** [HMI_ECU_main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:48:25 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+AllocationBase 0x0, BaseAddress 0x71540000, RegionSize 0x370000, State 0x10000
+C:\WinAVR-20100110\utils\bin\sh.exe: *** Couldn't reserve space for cygwin's heap, Win32 error 0
+make: *** [HMI_ECU_main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:49:32 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+AllocationBase 0x0, BaseAddress 0x71540000, RegionSize 0x370000, State 0x10000
+C:\WinAVR-20100110\utils\bin\sh.exe: *** Couldn't reserve space for cygwin's heap, Win32 error 0
+make: *** [HMI_ECU_main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:54:12 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+AllocationBase 0x0, BaseAddress 0x71540000, RegionSize 0x370000, State 0x10000
+C:\WinAVR-20100110\utils\bin\sh.exe: *** Couldn't reserve space for cygwin's heap, Win32 error 0
+make: *** [HMI_ECU_main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:56:37 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_ECU_main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:12:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+../HMI_system.h:91: warning: data definition has no type or storage class
+../HMI_system.h:91: warning: type defaults to 'int' in declaration of 'send_Pass_ToMcu2'
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_system.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:14:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+../HMI_system.h:91: warning: data definition has no type or storage class
+../HMI_system.h:91: warning: type defaults to 'int' in declaration of 'send_Pass_ToMcu2'
+../HMI_system.c:122: error: conflicting types for 'send_Pass_ToMcu2'
+../HMI_system.h:91: error: previous declaration of 'send_Pass_ToMcu2' was here
+make: *** [HMI_system.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:57:40 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_ECU_main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:12:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+../HMI_system.h:91: warning: data definition has no type or storage class
+../HMI_system.h:91: warning: type defaults to 'int' in declaration of 'send_Pass_ToMcu2'
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_system.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:14:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+../HMI_system.h:91: warning: data definition has no type or storage class
+../HMI_system.h:91: warning: type defaults to 'int' in declaration of 'send_Pass_ToMcu2'
+../HMI_system.c:122: error: conflicting types for 'send_Pass_ToMcu2'
+../HMI_system.h:91: error: previous declaration of 'send_Pass_ToMcu2' was here
+make: *** [HMI_system.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:58:21 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_system.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:14:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+../HMI_system.h:91: warning: data definition has no type or storage class
+../HMI_system.h:91: warning: type defaults to 'int' in declaration of 'send_Pass_ToMcu2'
+../HMI_system.c:122: error: conflicting types for 'send_Pass_ToMcu2'
+../HMI_system.h:91: error: previous declaration of 'send_Pass_ToMcu2' was here
+make: *** [HMI_system.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:59:35 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_ECU_main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:12:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+../HMI_system.h:91: warning: data definition has no type or storage class
+../HMI_system.h:91: warning: type defaults to 'int' in declaration of 'send_Pass_ToMcu2'
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_system.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:14:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+../HMI_system.h:91: warning: data definition has no type or storage class
+../HMI_system.h:91: warning: type defaults to 'int' in declaration of 'send_Pass_ToMcu2'
+../HMI_system.c:122: error: conflicting types for 'send_Pass_ToMcu2'
+../HMI_system.h:91: error: previous declaration of 'send_Pass_ToMcu2' was here
+make: *** [HMI_system.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:00:58 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_ECU_main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:12:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_system.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:14:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+Finished building: ../keypad.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:209: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+Finished building: ../timer.c
+ 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"uart.d" -MT"uart.o" -c -o "uart.o" "../uart.c"
+Finished building: ../uart.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   16100 bytes (98.3% Full)
+(.text + .data + .bootloader)
+
+Data:        381 bytes (37.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:01:49 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_system.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:13:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   16100 bytes (98.3% Full)
+(.text + .data + .bootloader)
+
+Data:        381 bytes (37.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:04:24 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_ECU_main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:12:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:12:00 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_ECU_main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:12:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   16100 bytes (98.3% Full)
+(.text + .data + .bootloader)
+
+Data:        381 bytes (37.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:18:51 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Building file: ../HMI_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_main.d" -MT"HMI_ECU_main.o" -c -o "HMI_ECU_main.o" "../HMI_ECU_main.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_ECU_main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_ECU_main.c:12:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_ECU_main.c
+ 
+Building file: ../HMI_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"HMI_system.d" -MT"HMI_system.o" -c -o "HMI_system.o" "../HMI_system.c"
+In file included from ../HMI_system.h:23,
+                 from ../HMI_system.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../HMI_system.c:13:
+../HMI_system.h:40: warning: useless storage class specifier in empty declaration
+../HMI_system.h:44: warning: useless storage class specifier in empty declaration
+Finished building: ../HMI_system.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+Finished building: ../keypad.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:209: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+Finished building: ../timer.c
+ 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"uart.d" -MT"uart.o" -c -o "uart.o" "../uart.c"
+Finished building: ../uart.c
+ 
+Building target: HMI_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HMI_ECU.map -mmcu=atmega16 -o "HMI_ECU.elf"  ./HMI_ECU_main.o ./HMI_system.o ./gpio.o ./keypad.o ./lcd.o ./timer.o ./uart.o   
+Finished building target: HMI_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HMI_ECU.elf  >"HMI_ECU.lss"
+Finished building: HMI_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:18:55 **** Build of configuration Debug for project Control_ECU ****
+make all 
+Building file: ../Control_ECU_main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_main.d" -MT"Control_ECU_main.o" -c -o "Control_ECU_main.o" "../Control_ECU_main.c"
+In file included from ../Control_system.h:29,
+                 from ../Control_ECU_main.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Control_ECU_main.c:13:
+../Control_system.h:58: warning: useless storage class specifier in empty declaration
+../Control_system.h:62: warning: useless storage class specifier in empty declaration
+Finished building: ../Control_ECU_main.c
+ 
+Building file: ../buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"buzzer.d" -MT"buzzer.o" -c -o "buzzer.o" "../buzzer.c"
+Finished building: ../buzzer.c
+ 
+Building file: ../control_system.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"control_system.d" -MT"control_system.o" -c -o "control_system.o" "../control_system.c"
+In file included from ../Control_system.h:29,
+                 from ../control_system.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../control_system.c:14:
+../Control_system.h:58: warning: useless storage class specifier in empty declaration
+../Control_system.h:62: warning: useless storage class specifier in empty declaration
+Finished building: ../control_system.c
+ 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+Finished building: ../dc_motor.c
+ 
+Building file: ../external_eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"external_eeprom.d" -MT"external_eeprom.o" -c -o "external_eeprom.o" "../external_eeprom.c"
+Finished building: ../external_eeprom.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../pwm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"pwm.d" -MT"pwm.o" -c -o "pwm.o" "../pwm.c"
+Finished building: ../pwm.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+Finished building: ../timer.c
+ 
+Building file: ../twi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"twi.d" -MT"twi.o" -c -o "twi.o" "../twi.c"
+Finished building: ../twi.c
+ 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=8000000UL -MMD -MP -MF"uart.d" -MT"uart.o" -c -o "uart.o" "../uart.c"
+Finished building: ../uart.c
+ 
+Building target: Control_ECU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Control_ECU.map -mmcu=atmega16 -o "Control_ECU.elf"  ./Control_ECU_main.o ./buzzer.o ./control_system.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./pwm.o ./timer.o ./twi.o ./uart.o   
+Finished building target: Control_ECU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Control_ECU.elf  >"Control_ECU.lss"
+Finished building: Control_ECU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:26:29 **** Incremental Build of configuration Debug for project Control_ECU ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Control_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9432 bytes (57.6% Full)
+(.text + .data + .bootloader)
+
+Data:         58 bytes (5.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:26:29 **** Incremental Build of configuration Debug for project HMI_ECU ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 HMI_ECU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14718 bytes (89.8% Full)
+(.text + .data + .bootloader)
+
+Data:        326 bytes (31.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

@@ -1,0 +1,137 @@
+/******************************************************************************
+ *
+ * Module: system
+ *
+ * File Name: HMI_system.h
+ *
+ * Description: Header file for the system
+ *
+ * Author: Esraa Ali
+ *
+ *******************************************************************************/
+#ifndef HMI_SYSTEM_H_
+#define HMI_SYSTEM_H_
+
+/***********************************************************************************************************
+ *                                         Includes                                                     *
+ **********************************************************************************************************/
+#include"std_types.h"
+#include"timer.h"
+#include"keypad.h"
+#include"lcd.h"
+#include"uart.h"
+#include<util/delay.h>
+#include<avr/io.h>
+#include<avr/interrupt.h>
+
+/***********************************************************************************************************
+ *                                         Definitions                                                    *
+ **********************************************************************************************************/
+#define NUMBER_OF_OVERFLOWS_PER_SECOND 32
+#define M1_READY 0x20
+#define M2_READY 0x10
+
+
+/***************************************************************************************************************
+                                        Types Declaration
+ **************************************************************************************************************/
+typedef enum{
+	wrongPass,correctPass
+};
+
+typedef enum{
+	enterPass,sendByUART,displayMenu,doorState,changePass,wrongPassword
+};
+
+/***********************************************************************************************************
+ *                                        Extern Variables                                                 *
+ **********************************************************************************************************/
+extern uint16 volatile g_timer_tick ;
+extern uint8 volatile g_order;
+extern uint8 pass[5];
+extern uint8 confirmPass[5];
+extern uint8 do_case;
+extern uint8 volatile selected_option;
+extern uint8 volatile checker;
+extern uint8 volatile checking_value;
+/***********************************************************************************************************
+ *                                       Function Prototypes                                               *
+ **********************************************************************************************************/
+
+/***************************************************
+ * Description : count time for call back
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+
+void timer_decrement_counter(void);
+void timer(uint8 volatile g_seconds_required);
+
+/***************************************************
+ * Description : Ask the user to enter the pass and confirm it
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+
+void Enter_Password(void);
+
+/***************************************************
+ * Description : check if the 2 pass matched or not
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+
+void check_matchedPass();
+
+/***************************************************
+ * Description : send pass to Control_ECU by UART
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+send_Pass_ToMcu2(void) ;
+
+/***************************************************
+ * Description : display options menu
+ * 				+ -> open door
+ * 				- -> change pass
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+
+void options_menu(void);
+
+/***************************************************
+ * Description : store entered pass from keypad to an array
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+
+void enter_saved_pass(void);
+
+/***************************************************
+ * Description : check if the received pass is correct or not
+ * Argument    : check password
+ * Returns     : None
+ ***************************************************/
+
+void check_Pass(uint8 check_password);
+
+void display_optionsMenu(void);
+
+/***************************************************
+ * Description : display the state of dc motor -> opening / stop / closing
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+
+void matched_State(void);
+
+/***************************************************
+ * Description : if the user enter wrong pass for 3 times -> activate alarming system
+ * Argument    : None
+ * Returns     : None
+ ***************************************************/
+void wrong_Passwords(void);
+
+#endif
+

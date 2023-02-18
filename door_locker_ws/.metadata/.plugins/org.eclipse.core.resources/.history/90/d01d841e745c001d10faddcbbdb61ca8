@@ -1,0 +1,133 @@
+#ifndef CONTROL_SYSTEM_H_
+#define CONTROL_SYSTEM_H_
+//
+//#include "timer.h"
+//#include "external_eeprom.h"
+//#include "uart.h"
+//#include "dc_motor.h"
+//#include "buzzer.h"
+//#include "twi.h"
+//#include"gpio.h"
+//#include <util/delay.h>
+//#include <avr/io.h>
+//#include<avr/interrupt.h>
+//#include<util/delay.h>
+//
+//#define OVERFLOW_PER_SEC    32
+//#define HMI_READY           0x01
+//#define CONTROL_READY       0x02
+//#define ADDRESS             0x10
+//
+//extern uint16 volatile g_timer1_tick;
+//extern uint8 pass[5];
+//extern uint8 confirmPass[5];
+//extern uint8 volatile check_pass;
+//extern uint8 WrongPass_Counter;
+//extern uint8 order;
+//
+//typedef enum{
+//	wrongPass,correctPass
+//};
+//typedef enum{
+// enter_password,display_doorOption,open_door,change_pass,wrong_password
+//};
+//
+//void timer_increment_tick(void);
+//void timer(uint8 volatile g_seconds);
+//void recieve_pass(void);
+//void checkPass_with_EEPROM(void);
+//void savePass_to_EEPROM(void);
+//void recieve_optionMenu(void);
+//void matched_state(void);
+//void wrong_Pass(void);
+//
+//#endif
+
+/***********************************************************************************************************
+ * Module: Application2
+ *
+ * File Name :app2.h
+ *
+ * Description:Header file for application
+ *      Author: Doha Eid
+ **********************************************************************************************************/
+#include"std_types.h"
+#include"timer.h"
+#include"uart.h"
+#include"dc_motor.h"
+#include"twi.h"
+#include"external_eeprom.h"
+#include"buzzer.h"
+#include"gpio.h"
+#include<avr/io.h>
+#include<avr/interrupt.h>
+#include<util/delay.h>
+/***********************************************************************************************************
+ *                                        Definitions                                                      *
+ ***********************************************************************************************************/
+#define NUMBER_OF_OVERFLOWS_PER_SECOND 32
+#define M1_READY 0x20
+#define M2_READY 0x10
+#define ADDRESS 0x01
+/***********************************************************************************************************
+ *                                       Extern Variables                                                 *
+ **********************************************************************************************************/
+extern uint8 volatile g_order;
+extern uint16 volatile g_timer_tick;
+extern uint8 checkPass;
+extern uint8 password_saved[5];
+extern uint8 password_recieved[5];
+extern uint8 i;
+extern uint8 selected_option;
+extern uint8 attempts;
+extern uint8 counter;
+
+typedef enum{
+	wrongPass,correctPass
+};
+
+typedef enum{
+	enterPass,sendByUART,displayMenu,doorState,changePass,wrongPassword
+};
+/**********************************************************************************************************
+ *                                      Function Prototypes                                               *
+ **********************************************************************************************************/
+/*
+ * Description:
+ * Function that using timer to count
+ * it is call back function of timer
+ */
+void timer_decrement_counter(void);
+void timer(uint8 volatile g_seconds_required);
+/*
+ * Description :
+ * Function that  receive the passwords from the MCU1
+ */
+void recieve_Pass(void);
+/*
+ * Description :Function checks if the password is matching with the saved in eeprom or not
+ */
+void check_matchingEEPROM();
+/*
+ * Description:
+ * Function to save the password at EEPROM
+ */
+void save_in_EEPROM();
+/*
+ * Description:
+ * Function to receive from MCU1 the main list
+ * *.open
+ * -.change password
+ */
+void recieve_optionMenu(void);
+/*
+ * Description:
+ * Function that turn on the dc motor
+ */
+void matched_State(void);
+/*
+ * Description :
+ * Function that when we enter the password 3 times wrong turn on the buzzer for 60 seconds
+ */
+void wrong_Passwords(void);
+#endif

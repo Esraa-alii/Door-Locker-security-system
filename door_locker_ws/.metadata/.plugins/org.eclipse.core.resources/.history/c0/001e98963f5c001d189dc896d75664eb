@@ -1,0 +1,255 @@
+
+/***********************************************************************************************************
+ * Module :Application
+ *
+ * File Name :app.c
+ *
+ * Description:SOurce file for the application
+ *
+ * Author:Esraa Ali
+ **********************************************************************************************************/
+#include "HMI_system.h"
+
+/***********************************************************************************************************
+ *                                       Global Variables                                                  *
+ ***********************************************************************************************************/
+/*Global variable for edge count function for contain ticks counter of timer */
+uint16 volatile g_timer_tick = 0;
+/*Global variable to know where the code will be */
+uint8 volatile g_order;
+/*Global variable to take the pass from the keypad */
+uint8 pass[5];
+uint8 confirmPass[5];
+uint8 i;
+uint8 do_case;
+/*Global variable used in function of options */
+uint8 volatile selected_option;
+/*Global variable for check the passwords to open the door  */
+uint8 volatile checker;
+uint8 volatile checking_value;
+/*Global configuration for timer */
+//Timer_ConfigType configure = { Timer0, Normal, F_CPU_1024, No_clock2, 0 };
+
+/***********************************************************************************************************
+ *                                      Function Definitions                                               *
+ **********************************************************************************************************/
+/*
+ * Description :
+ * call back function of timer to count the seconds that we need
+ */
+void timer_decrement_counter(void) {
+
+	/*increases the global tick each time the timer interrupt*/
+	g_timer_tick++;
+}
+
+void timer(uint8 volatile g_seconds_required) {
+	TIMER_config timer_config ={timer1,t_clk1024,normal,0};
+	Timer_init(&timer_config);
+   Timer_setCallBack(timer1,timer_decrement_counter);
+	while (g_timer_tick != ((NUMBER_OF_OVERFLOWS_PER_SECOND) * g_seconds_required));
+	Timer_deInit(timer1);
+	g_timer_tick = 0;
+}
+/*
+ * Description:
+ * Function that take the password twice from the keypad and display on LCD as *
+ */
+void Enter_Password(void) {
+    /*receive the first password from the keypad and store at array*/
+	LCD_displayString("Enter Password");
+	LCD_moveCursor(1, 4);
+	for (i = 0; i < 5; i++) {
+		pass[i] = KEYPAD_getPressedKey();
+		LCD_displayCharacter('*');
+		_delay_ms(500);
+		/*if we press on ON/C key it clear the pass that entered and would start again from 0*/
+		if (pass[i] == 13) {
+			/*clear the screen */
+			LCD_clearScreen();
+			/*enter the new password */
+			LCD_displayString("Enter new password");
+			LCD_moveCursor(0, 0);
+
+		}
+	}
+	/*Enter the second password from the keypad and store at array */
+	LCD_clearScreen();
+	LCD_displayString("Re-Enter Pass");
+	LCD_moveCursor(1, 4);
+	for (i = 0; i < 5; i++) {
+		confirmPass[i] = KEYPAD_getPressedKey();
+		LCD_displayCharacter('*');
+		_delay_ms(500);
+		/*if we press on ON/C key it clear the pass that entered and would start again from 0*/
+		if (confirmPass[i] == 13) {
+			/*clear the screen */
+			LCD_clearScreen();
+			/*enter the new password */
+			LCD_displayString("Enter new password");
+			LCD_moveCursor(2, 0);
+
+		}
+	}
+/*calling the function to compare between two passwords */
+	check_matchedPass();
+}
+/*
+ * Description :
+ * Function to compare if the two passwords are matching or not
+ */
+void check_matchedPass() {
+	for (i = 0; i < 5; i++) {
+		if (pass[i] != confirmPass[i]) {
+			LCD_clearScreen();
+			LCD_moveCursor(0,0);
+//			 LCD_displayString("Wrong Password ");
+			checking_value = wrongPass;
+			break;
+		}
+	}
+		if(i==5){
+		checking_value = correctPass;
+	}
+}
+
+/*
+ * Description:
+ * Function to send the password to the MCU2 by uart
+ */
+void send_Pass_ToMcu2(void) {
+//	LCD_displayString("Press=to send password");
+	if (KEYPAD_getPressedKey() == '=') {
+		for (i = 0; i < 5; i++) {
+			UART_sendByte(pass[i]);
+		}
+	}
+
+}
+
+/*
+ * Description:
+ * Function to decide open the door or change the password
+ * option list from *.open
+ * -. change password
+ */
+void options_menu(void) {
+//	selected_option = KEYPAD_getPressedKey();
+	/*repeats until the user choose one of two options */
+	do {
+		selected_option = KEYPAD_getPressedKey();
+	} while ((selected_option != '+') && (selected_option != '-'));
+
+	/*sends to MCU2 the option which the user chose*/
+	UART_sendByte(selected_option);
+	LCD_clearScreen();
+//	LCD_displayCharacter(selected_option);
+	_delay_ms(500);
+	/*decide where we need the code run */
+	if (selected_option == '+') {
+		g_order = doorState;
+	} else if (selected_option == '-') {
+		g_order = changePass;
+	}
+
+}
+/*
+ * Description :
+ * Function that take the password once from the keypad and store at array
+ */
+void enter_saved_pass(void) {
+	for (i = 0; i < 5; i++) {
+		pass[i] = KEYPAD_getPressedKey();
+		LCD_displayCharacter('*');
+		_delay_ms(500);
+		/*if we press on ON/C key it clear the pass that entered and would start again from 0*/
+		if (pass[i] == 13) {
+			/*clear the screen */
+			LCD_clearScreen();
+			/*enter the new password */
+			LCD_displayString("Enter new password");
+			LCD_moveCursor(0, 0);
+			i = 0;
+		}
+	}
+
+}
+/*
+ * Description:
+ * Function that display the main list of the system
+ */
+void display_optionsMenu(void) {
+	LCD_clearScreen();
+	LCD_moveCursor(0, 0);
+	LCD_displayString("+: Open door ");
+	LCD_moveCursor(1, 0);
+	LCD_displayString("-: Change Pass");
+	options_menu();
+}
+/*
+ * Description :
+ * Function that receive if the pass was correct or not and if correct open the door
+ */
+void check_Pass(uint8 check_password) {
+	/*In this case if the password unmatched
+	 *so display on the screen unmatched
+	 *and receive from the MCU2  the step that will go to
+	 */
+	if (check_password == 0) {
+		LCD_displayString("Wrong Password");
+		_delay_ms(60000);
+		LCD_clearScreen();
+		g_order = UART_recieveByte();
+		do_case=wrongPass;
+
+	}
+
+	/*
+	 * In this case if the password is matched
+	 * So display on the screen Matched password
+	 * and open the door and turn on the DC_motor and rotate clock wise for 15 seconds
+	 * and display (The door is opening) while the DC_motor is rotating
+	 *
+	 */
+	else if (check_password == 1) {
+		LCD_displayString("correct Password");
+		_delay_ms(1000);
+		LCD_clearScreen();
+		do_case=correctPass;
+	}
+}
+/*
+ * DEscription :
+ * Function that display on the lcd when the door is opening and closing
+ */
+void matched_State(void) {
+	/*display on the lcd message for 15 seconds then clear the screen*/
+	LCD_displayString("Opening the door");
+	timer(15);
+	LCD_clearScreen();
+	LCD_moveCursor(0, 0);
+	/*display on the lcd message for 3 seconds then clear the screen*/
+	LCD_displayString("Door close in 3s");
+	timer(3);
+	LCD_clearScreen();
+	LCD_moveCursor(0, 0);
+	/*display on the lcd message for 15 seconds then clear the screen*/
+	LCD_displayString("Closing The door");
+	timer(15);
+	LCD_clearScreen();
+}
+/*
+ * Description :
+ * Function that when we enter the password 3 times wrong display message on the lcd
+ * for the 60 seconds
+ * then return to main list
+ */
+void wrong_Passwords(void) {
+	LCD_clearScreen();
+	LCD_moveCursor(0, 0);
+	LCD_displayString("Wrong Password!");
+	_delay_ms(60000);
+	timer(30);
+	display_optionsMenu();
+}
+

@@ -1,0 +1,157 @@
+
+/***********************************************************************************************************
+ * Module :main
+ *
+ * File Name :main.c
+ *
+ *Description: source file for the main application
+ * Author:Esraa Ali
+ ***********************************************************************************************************/
+#include "HMI_system.h"
+int main(void){
+	LCD_init();
+	UART_config uart_config ={Async,enable_evenPolarity,one_bit};
+	//	//initialization of UART
+		UART_init(&uart_config);
+	//
+	//	//configuration of Timer1
+		TIMER_config timer_config ={timer1,t_clk1024,normal,0};
+	//	//initialization of UART
+		Timer_init(&timer_config);
+		Timer_setCallBack(timer1,timer_decrement_counter);
+		/*open pin of global interrupt the I-bit*/
+
+			SREG |= (1 << 7);
+	g_order = enterPass;
+	while (1) {
+		switch (g_order) {
+		/*
+		 * At step 0 enter the pass twice to save the the pass in eeprom to open the system
+		 *and press on = to send the pass by UART
+		 */
+		case enterPass:
+
+			Enter_Password();
+			/*checking if the password matched then go to step 1
+			 * if unmatched repeat this step again
+			 */
+			if (checking_value == correctPass) {
+				g_order = sendByUART;
+			} else {
+				LCD_clearScreen();
+				LCD_moveCursor(0,0);
+				LCD_displayString("Wrong password!");
+				_delay_ms(1000);
+				LCD_clearScreen();
+				g_order =enterPass ;
+			}
+			LCD_clearScreen();
+
+			break;
+
+			/*
+			 * this steps displays that the two passwords sent are matched and saved in EEPROM
+			 * if matched display matched
+			 * and go to case 2
+			 */
+		case sendByUART:
+			LCD_clearScreen();
+			LCD_moveCursor(0,0);
+			LCD_displayString("Correct pass!");
+			_delay_ms(500);
+			send_Pass_ToMcu2();
+			LCD_clearScreen();
+			LCD_clearScreen();
+			LCD_moveCursor(0,0);
+			LCD_displayString("Password saved!");
+			_delay_ms(500);
+			g_order = displayMenu;
+			break;
+
+			/*
+			 * This case to decide what the user need
+			 * *.open the door
+			 * -.change the password
+			 */
+		case displayMenu:
+			display_optionsMenu();
+			if (selected_option == '+') {
+					g_order = doorState;
+				} else if (selected_option == '-') {
+					g_order = changePass;
+				}
+
+			break;
+			/*
+			 * This case we open the system :
+			 * enter the saved pass if the pass matched with the eeprom {
+			 * open the door and turn on the DC_motor and rotate clock wise  for 15 seconds
+			 * and wait 3 seconds and close the door and rotate the DC_motor Anti clock wise for 15 seconds }
+			 * if the password unmatched their is 3 attempts to enter the correct and if the user does not
+			 * enter the correct one the buzzer will turn on for 60 seconds and
+			 */
+		case doorState:
+			LCD_clearScreen();
+			LCD_moveCursor(0, 0);
+			LCD_displayString("Enter password");
+			LCD_moveCursor(1, 4);
+			enter_saved_pass();
+			LCD_moveCursor(1, 4);
+			send_Pass_ToMcu2();
+			LCD_clearScreen();
+			checker = UART_recieveByte();
+			check_Pass(checker);
+			if(do_case)
+			matched_State();
+			g_order=displayMenu;
+			break;
+			/*
+			 * This case change the password by reset the old password and change it
+			 */
+		case changePass:
+			LCD_clearScreen();
+			LCD_moveCursor(0, 0);
+			LCD_displayString("Enter old pass");
+			LCD_moveCursor(1, 4);
+			/*Enter the old password */
+			enter_saved_pass();
+			LCD_moveCursor(1, 4);
+			/*Then send to MCU2 to compare with that saved in EEprom*/
+			send_Pass_ToMcu2();
+			LCD_clearScreen();
+			/*receive the state from MCU2 in checker
+			 * if the checker = 1 so enter the new password twice and save in eeprom
+			 * if checker = 0 so return to case 0 to try again to enter the correct old password
+			 */
+			checker = UART_recieveByte();
+			check_Pass(checker);
+			if(do_case){
+			Enter_Password();
+			if (checking_value == correctPass) {
+				g_order = sendByUART;
+			} else {
+				LCD_clearScreen();
+				LCD_moveCursor(0, 0);
+				LCD_displayString("Wrong Password!");
+				_delay_ms(1000);
+				LCD_clearScreen();
+				g_order = enterPass;
+			}
+			LCD_clearScreen();
+			}
+			break;
+			/*
+			 * the code will go to this step in step the user entered wrong password for 3 times
+			 * and turn on the buzzer for 60 seconds
+			 * and display warning message
+			 */
+		case wrongPassword:
+			wrong_Passwords();
+			g_order=displayMenu;
+			break;
+
+		}
+	}
+}
+
+
